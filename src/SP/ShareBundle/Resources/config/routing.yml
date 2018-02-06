@@ -1,0 +1,56 @@
+#sp_share_homepage:
+#    path:     /
+#    defaults: { _controller: SPShareBundle:Default:index }
+
+sp_share_home:
+    path:    /{page}
+    defaults:
+        _controller: SPShareBundle:Advert:index
+        page: 1
+    requirements:
+            page: \d+
+
+sp_share_search:
+    path:    /search/{page}
+    defaults:
+        _controller: SPShareBundle:Advert:search
+        page: 1
+    requirements:
+            page: \d+
+
+sp_share_view:
+    path:   /advert/{id}
+    defaults:
+        _controller: SPShareBundle:Advert:view
+        id: 1
+    requirements:
+        id: \d+
+
+sp_share_user:
+    path:   /user/{username},{page}
+    defaults:
+        _controller: SPShareBundle:Advert:user
+        page: 1
+    requirements:
+        page: \d+
+
+sp_share_addAdvert:
+    path:   /addAdvert
+    defaults:
+        _controller: SPShareBundle:Advert:addAdvert
+
+sp_share_editAdvert:
+    path:   /editAdvert/{id}
+    defaults:
+        _controller: SPShareBundle:Advert:editAdvert
+
+sp_share_deleteAdvert:
+    path:   /deleteAdvert/{id}
+    defaults:
+        _controller: SPShareBundle:Advert:deleteAdvert
+
+sp_share_message:
+    path:   /message
+    defaults:
+        _controller: SPShareBundle:Advert:Message
+

@@ -1,0 +1,30 @@
+{% extends "SPShareBundle::layout.html.twig" %}
+
+{% block title %}
+    Recherche - {{ parent() }}
+{% endblock %}
+
+{% block spshare_body %}
+    <h2>Resultats de la recherche</h2>
+    <ul>
+        {% for advert in adverts %}
+            <li>
+                <a href="{{ path('sp_share_view', {'id': advert.id}) }}">
+                    <img src="{{ asset('uploads/image/' ~ advert.image) }}" width="100px" height="100px">
+                    {{ advert.title }}
+                </a>
+            </li>
+
+        {% else %}
+            <li>Aucun Résultats trouvé</li>
+        {% endfor %}
+    </ul>
+    <div class="text-center">{{ knp_pagination_render(adverts) }}</div>
+    <p>
+        <a href="{{ path('sp_share_home') }}" class="btn btn-default">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+            Retour à la l'acceuil
+        </a>
+    </p>
+
+{% endblock %}
