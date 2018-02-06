@@ -43,7 +43,7 @@ class AdvertController extends Controller
         $adverts = $this->get('knp_paginator')->paginate(
             $listAdverts,
             $request->query->get('page', $page),
-            5
+            3
         );
 
         return $this->render('SPShareBundle:Advert:index.html.twig', array(
@@ -64,7 +64,7 @@ class AdvertController extends Controller
         $adverts = $this->get('knp_paginator')->paginate(
             $listAdverts,
             $request->query->get('page', $page),
-            5
+            3
         );
 
         return $this->render('SPShareBundle:Advert:search.html.twig', array(
